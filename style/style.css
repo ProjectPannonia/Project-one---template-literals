@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+.hide {
+    display: none;
+}
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 98vw;
+    height: 98vh;
+    background: url('../pic/bg.jpg') no-repeat;
+    margin: 0px auto;
+}
+#sign_log_in {
+    margin: 25vh auto 25vh auto;
+    width: 30vw;
+    height: 40vh;
+    background-color: rgba(250, 250, 35, 0.2);
+    border-radius: 8%;
+    color: white;
+}
+#sign_log_in h2 {
+    text-align: center;
+    background-color:rgba(250, 250, 35, 0.6);
+}
+#sign_log_in form {
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+    margin-top: 4vh;
+}
+#sign_log_in form > *{
+    margin-bottom: 2vh;
+}
+#sign_log_in form label {
+    font-size: 1.3em;
+    text-align: center;
+    background-color:rgba(250, 250, 35, 0.6);
+    border-radius: 35%;
+}
+#sign_log_in form input {
+    height: 5vh;
+    border-radius: 5%;
+    font-size: 1em;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: initial;
+    color: white;
+    font-size: 1.2em;
+}
+#sign_log_in form input:hover {
+    background-color: rgba(250, 250, 35, 0.3);
+    color: white;
+}
+
+.main_box {
+    display: flex;
+    margin: 15vh auto;
+    flex-direction: column;
+    background-color: rgba(250, 250, 35, 0.3);
+    border-top-left-radius: 2%;
+    border-top-right-radius: 4%;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 4%;
+    color: wheat;
+}
+.main_box h2 {
+    text-align: center;
+}
+#sign_up form {
+    display: flex;
+    flex-direction: column;
+    /*! border: 4px solid darkseagreen; */
+    padding: 10px 50px;
+    margin: 10px auto;
+    font-size: 1.5em;
+    border-radius: 8%;
+    width: 30vw;
+}
+
+#sign_up form > input {
+    width: 25vw;
+    height: 4vh;
+    border-radius: 20%;
+    font-size: 1em;
+    color: white;
+    background-color: rgba(250, 250, 35, 0.7);
+    text-align: center;
+}
+#sign_up form > * {
+    margin-bottom: 10px;
+}
+#sign_up form input:last-of-type {
+    margin: 30px auto 0px auto;
+    width: 15vw;
+}
+.invalidData {
+    border: 1px solid red;
+    background-color: #e89f74;
+}
+#log_in {
+    margin-top: 20vh;
+    width: 30vw;
+    height: 40vh;
+}
+
+#log_in form {
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+    margin-top: 0vh;
+    color: dimgrey;
+    font-size: 1.2em;
+}
+#log_in form input {
+    height: 5vh;
+    border-radius: 5%;
+    font-size: 1em;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(250, 250, 35, 0.7);
+    border-radius: 30%;
+    color: white;
+    text-align: center;
+}
+#log_in form > *{
+    margin-bottom: 2vh;
+}
+#log_in form label {
+    font-size: 1.3em;
+    text-align: center;
+    background-color:burlywood;
+    border-radius: 5px;
+}
+#log_in form label {
+    font-size: 1.3em;
+    text-align: center;
+    background-color:rgba(250, 250, 35, 0.7);
+    border-radius: 5px;
+    font-size: 1.3em;
+}
+
+.top_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(255,162,41,.89);
+    padding: 10px;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+}
+.top_menu h2 {
+    display: block;
+    margin:0px;
+    border-radius: 2%;
+}
+.main_content {
+    height: 86vh;
+    background-color: rgba(250, 250, 35, 0.2);
+}
+#my_list_div_menu  input{
+    /*! margin: 0px 5px 5px 5px; */
+}
+.my_list_box {
+    display: flex;
+    flex-direction: column;
+    height: 82vh;
+    background-color: rgba(250, 250, 35, 0.2);
+}
+.my_list_box h2 {
+    margin: 0 10px 0 10px;
+    background-color: rgba(255,162,41,.89);
+    display: block;
+    width: 67vw;
+    /*! margin: 10px 30px 0 30px; */
+}
+.my_list_box ul li {
+    width: 50vw;
+}
+#existing_lists ul {
+    list-style: none;
+}
+#existing_lists ul li{
+    font-size: 1.4em;
+    background-color: green;
+    margin-bottom: 5px;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#my_list_div form {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+#new_list_Table {
+    margin-top: 10px;
+    align-self: center;
+    width: 69vw;
+    min-height: 57vh;
+    max-height: 60vh;
+    overflow: scroll;
+    display: block;
+    /*! overflow: scroll hidden; */
+    background-color: rgba(250, 255, 205, 0.4);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color: forestgreen;
+    font-size: 1.1em;
+}
+#new_list_Table thead {
+    background-color: rgb(197, 228, 142);
+    height: 4vh;
+}
+#new_list_Table td{
+    text-align: center;
+}
+#save_created_list {
+    width: 20vw;
+    height: 50px;
+    align-self: center;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: darkseagreen;
+}
+#my_list_div form input:nth-child(3) {
+    background-color: darkseagreen;
+    padding: 5px;
+    width: 10vw;
+    height: 3.5vh;
+    color: greenyellow;
+    border: none;
+}
+.edit_btn {
+    height: 23px;
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+}
+.footer {
+    
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    background-color: rgba(255,162,41,.89);
+    height: 3vh;
+}
+.footer h2 {
+    /*! margin: 10px 0px 7px; */
+    display: block;
+    margin: 0 auto;
+    height: 3vh;
+}
+#create_new_list p {
+    
+    font-size: 1.8em;
+    text-align: center;
+    margin-top: 10px;
+}
+#new_list_Table th:first-child {
+    width: 20vw;
+}
+#new_list_Table th:nth-child(2) {
+    
+    width: 20vw;
+}
+#new_list_Table th:nth-child(3) {
+    
+    width: 20vw;
+}
+#new_list_Table th:nth-child(4) {
+    
+    width: 9vw;
+}
+#logged_in {
+    width: 70vw;
+    margin-top: 1vh;
+    height: 94vh;
+}
+#registered_list_box {
+    background: red;
+    width: 70vw;
+    height: 72vh;
+    background-color: rgba(250, 250, 35, 0);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.list_box {
+    width: 68vw;
+    height: 8vh;
+    /*! background-color: ; */
+    margin:1vh;
+}
+.list_box h2 {
+    font-size: 2em;
+    height: 8vh;
+    padding-top: 2vh;
+    background-color: rgb(197, 228, 142);
+    color: forestgreen;
+}
+.list_box h2:hover {
+    background-color: rgba(197, 228, 142,0.5);
+    cursor: pointer;
+    color: white;
+}
+.tableContainer {
+    width: 68vw;
+    height: 100px;
+    margin-top: 1vh;
+    border: 1px solid aliceblue;
+}
+.tableContainer :first-child{
+    
+    height: 2vh;
+}
+.tableContainer :first-child th {
+    height: 50px;
+}
+.active_list_box {
+    height: auto;
+}
+#account_settings {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#settings_form {
+    /*display: flex;*/
+    display: none;
+    flex-direction: column;
+    width: 50vw;
+    margin: 0 auto;
+}
+#account_settings h2 {
+    display: none;
+}
+#settings_form input {
+    height: 5vh;
+    font-size: 1.3em;
+}
+.tableContainer thead {
+    background-color: rgba(197, 228, 142,.8);
+    color: forestgreen;
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: 'Teko', sans-serif;
+}
+.tableContainer tbody {
+    background-color: cadetblue;
+    font-size: 1.2em;
+    text-align: center;
+}
+.tableContainer tbody td {
+    padding: 1vh;
+}
+.top_menu form input{
+   padding: 3px 14px 3px 14px;
+    color: greenyellow;
+    font-size: 1.1em;
+    background: darkseagreen;
+    border-radius: 55px;
+   border: none;
+}
+.top_menu form input:hover {
+    color: red;
+}
+#settings_form input {
+    border-radius: 19px;
+    color: gray;
+    text-align: center;
+}
+#settings_form input:last-child {
+    width: 10vw;
+    margin:30px auto;
+    background-color: darkseagreen;
+    color: rgba(250, 250, 35, 0.3);
+}
+#settings_form input:last-child:hover {
+    background-color: rgba(255,162,41,.89);
+    color: white;
+}
+.footer a {
+    text-decoration: none;
+}
+#create_new_list form input {
+    height: 3vh;
+    margin: 0 10px 0 10px;
+}
+#create_new_list form label {
+    font-size: 1.3em
+}
+#my_list_div form input {
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    font-size: 1em;
+    background-color: darkseagreen;
+    color: greenyellow;
+}
+#my_list_div_menu form input {
+    background-color: darkseagreen;
+    color: greenyellow;
+    border: none;
+    margin-right: 5px;
+}
+#my_list_div_menu form input:hover {
+    background-color: wheat;
+    color: red;
+}
+
+@media screen and (max-width: 1366px) {
+    #log_in {
+        height: 45vh;
+    }
+    #aggreTerms {
+        margin-left: -15px;
+    }
+    #sign_up {
+        width: 35vw;
+    }
+    #sign_up_form {
+        border:none;
+    }
+    #sign_up form input:last-child {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        height: 6vh;
+    }
+    .my_list_box {
+        height: 78vh;
+    }
+    .tableContainer :first-child {
+        height: 3vh;
+    }
+    #create_new_list form input {
+        height: 4vh;
+    }
+    #create_new_list p {
+        margin-bottom: 1vh;
+        background-color: rgba(197, 228, 142, .8);
+        color: forestgreen;
+        display: block;
+        width: 50vw;
+        margin: 0 auto;
+    }
+    #new_list_Table {
+        margin-top: 1vh;
+    }
+    #save_created_list {
+        width: 15vw;
+        margin: 1vh;
+    }
+    .footer {
+        height: 10vh;
+    }
+    .footer h2 {
+        margin-top: 3px;
+        height: auto;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #sign_log_in {
+        width: 50vw;
+        height: 40vh;
+    }
+    #log_in {
+        width: 50vw;
+        height: 45vh;
+    }
+}
+@media screen and (max-width: 360px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding-top: 0;
+    }
+    #wrapper {
+        width: 100vw;
+        height: 100vh;
+        margin:0;
+        padding: 0;
+    }
+    #sign_log_in {
+        width: 88vw;
+        height: 85vh;
+        margin: 5vh auto;
+        border-radius: 0;
+    }
+    #sign_log_in h2 {
+        width: 85vw;
+        display: block;
+        margin: 3vh auto;
+        font-size: 2em;
+        border-radius: 5%;
+    }
+    #sign_log_in form {
+        margin: 0 auto;
+        padding-left: 1vh;
+        
+    }
+    #sign_log_in form label {
+        height: 7vh;
+        width: 85vw;
+        border-radius: 0;
+        font-size: 1.8em;
+        margin-bottom: 7vh;
+    }
+    #sign_log_in form input {
+        width: 80vw;
+        height: 15vh;
+    }
+    #log_in {
+        width: 88vw;
+        height: 70vh;
+        margin-top: 9vh;
+        margin-bottom: 0;
+    }
+    .main_box h2 {
+        font-size: 2em;
+        
+    }
+    #log_in form label {
+        width: 82vw;
+        height: 7vh;
+        font-size: 1.8em;
+        margin-bottom: 4vh;
+    }
+    #log_in form {
+        margin: 0 auto;
+        padding: 0;
+    }
+    #log_in form input {
+        width: 80vw;
+        height: 8vh;
+        font-size: 1.3em;
+        
+    }
+    #logged_in {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+    .top_menu {
+        flex-direction: column;
+        font-size: 1.1em;
+        border-radius: 0;
+    }
+    .top_menu h2 {
+        display: flex;
+        flex-direction: column;
+    }
+    .top_menu form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+    }
+    .top_menu form input {
+        width: 31vw;
+        height: 5vh;
+        border-radius: 0;
+    }
+    #my_list_div form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100vw;
+    }
+    #my_list_div form input {
+        width: 47vw;
+        border-radius: 0;
+    }
+    .main_box h2 {
+        width: 100vw;
+        margin-left: 0;
+    }
