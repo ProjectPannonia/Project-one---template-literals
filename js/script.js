@@ -1,8 +1,23 @@
-//fillInContent();
 (() => {
-    fillInContent();
+    htmlGenerator();
 })();
-function fillInContent() {
+
+function htmlGenerator() {
+    const head = document.querySelector('head');
+    const headTemplate = (
+        `
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <link rel="stylesheet" href="style/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <title>To-do manager</title>
+        `
+    );
+
     const body = document.querySelector('body');
     const mainDivNames = ["sign_log_in|", "sign_up|hide", "log_in|hide", "logged_in|hide"];
 
@@ -19,6 +34,7 @@ function fillInContent() {
         </div>
         `
     );
+    head.innerHTML = headTemplate;
     body.innerHTML = wrapperDiv;
 }
 function generateMainDivInner(id) {
@@ -227,6 +243,7 @@ function getCreateNewListPage(){
         <form>
             <label id='new_list_name_label'>Name:</label>
             <input id="new_list_name" type="text">
+
             <input id="save_list_name" type="button" value="Save">
 
             <label id='activity_name_label' for="activity_name" class="hide">Activity name:</label>
@@ -281,43 +298,9 @@ function generateFooter() {
     );
     return template;
 }
-/*
-    Existing lists and create new buttons handlers
-*/
 
-const myListDivButtonsContainer = document.getElementById('my_list_div_menu');
-myListDivButtonsContainer.querySelectorAll('input').forEach(item => {
-    item.addEventListener('click', event => {
-        const target = event.target;
-        const btnText = target.value;
 
-        buttonsHandler(btnText);
-    });
-    function buttonsHandler(text) {
-        const existingLists = document.getElementById('existing_lists');
-        const createNew = document.getElementById('create_new_list');
 
-        if(text === 'Existing lists') {
-            existingLists.classList.add('my_list_box');
-            existingLists.classList.remove('hide');
-            createNew.classList.add('hide');
-            createNew.classList.remove('my_list_box');
-        } else {
-            createNew.classList.add('my_list_box');
-            createNew.classList.remove('hide');
-            existingLists.classList.add('hide');
-            existingLists.classList.remove('my_list_box');
-        }
-    }
-});
-
-/* Date picker */
-
-$( function() {
-    $( "#datepicker" ).datepicker({
-        minDate: 'today'
-    });
-});
 
 /* Import js file */
 function include(file) {
@@ -328,6 +311,7 @@ function include(file) {
     document.getElementsByTagName('body').item(0).appendChild(script);
 }
 
+include('js/templateGenerator.js');
 include('js/loginHandler.js');
 include('js/loginAndSignupHandler.js');
 include('js/userRegistration.js');
