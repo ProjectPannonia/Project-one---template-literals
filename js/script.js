@@ -189,13 +189,59 @@ function generateMyListDivsInner(id) {
 
     switch(id) {
         case "my_list_div_menu":
+            result = (
+                `<form>
+                    <input id="existing_lists_btn" type="button" value="Existing lists">
+                    <input type="button" value="Create new">
+                </form>
+                `
+            );
             break;
         case "existing_lists":
+            result = (
+                `
+                <h2>Existing lists</h2>
+                <div id="registered_list_box"></div>
+                `
+            );
             break;
         case "create_new_list":
+            result = getCreateNewListPage();
             break;
     }
     return result;
+}
+function getCreateNewListPage(){
+    const template = (
+        `
+        <h2>Create new To-Do list</h2>
+        <form>
+            <label id='new_list_name_label'>Name:</label>
+            <input id="new_list_name" type="text">
+            <input id="save_list_name" type="button" value="Save">
+
+            <label id='activity_name_label' for="activity_name" class="hide">Activity name:</label>
+            <input id='activity_name' type="text" class="hide">
+            <label id="datepicker_label" for="datepicker" class="hide">Deadline</label>
+            <input id="datepicker" class="hide" type="text">
+            <input id="add_activity_btn" type="button" class="hide" value="Add">
+        </form>
+        <p>Unnamed to-do list</p>
+        <table id='new_list_Table'>
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Timestamp</th>
+                    <th>Deadline</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <input id="save_created_list" type="button" value="Save">
+        `
+    );
+    return template;
 }
 function generateFooter() {
     return null;
