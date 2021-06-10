@@ -10,6 +10,7 @@ loginBox.querySelectorAll('input').forEach(item => {
 
         switch(buttonText) {
             case 'Log In':
+                console.log('Login pushed');
                 mainButtonsHandler(buttonText);
                 break;
             case 'Sign up!':

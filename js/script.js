@@ -1,16 +1,18 @@
-fillInContent();
-
+//fillInContent();
+(() => {
+    fillInContent();
+})();
 function fillInContent() {
     const body = document.querySelector('body');
-    const mainDivNames = ["sign_log_in ", "sign_up hide", "log_in hide", "logged_in hide"];
+    const mainDivNames = ["sign_log_in|", "sign_up|hide", "log_in|hide", "logged_in|hide"];
 
     const wrapperDiv = (
         `
         <div id="wrapper">
             ${mainDivNames.map((name) =>  
                 `
-                <div id=${name.split(" ")[0]} class=${name.split(" ")[1]}>
-                    ${generateMainDivInner(name.split(" ")[0])}
+                <div id=${name.split("|")[0]} class=${name.split("|")[1]}>
+                    ${generateMainDivInner(name.split("|")[0])}
                 </div>
                 `
             ).join("")}
@@ -38,15 +40,16 @@ function generateMainDivInner(id) {
     return generatedElement;
 }
 function generateSignInAndLogIn() {
-    const labelTextAndBtnValue = ["Already signed up?_Log in", "Don't have an account?_Sign up!"];
+    const labelTextAndBtnValue = ["Already signed up?|Log In", "Don't have an account?|Sign up!"];
+    console.log(labelTextAndBtnValue[0].split("|")[1]);
     const divInner = (
         `
         <h2>My to-do application</h2>
         <form>
             ${labelTextAndBtnValue.map((textAndVal) => 
                 `
-                <label for="">${textAndVal.split("_")[0]}</label>
-                <input type="button" value=${textAndVal.split("_")[1]}>
+                <label for="">${textAndVal.split("|")[0]}</label>
+                <input type="button" value="${textAndVal.split("|")[1]}">
                 `
             ).join("")}
         </form>
@@ -76,7 +79,7 @@ function generateSignUp() {
     return template;
 }
 function generateLogin() {
-    const idTextType = ["email_log|Email|text", "psw_log|Password|password", ""];
+    const idTextType = ["email_log|Email|text", "psw_log|Password|password"];
 
     const template = (
         `
@@ -138,6 +141,11 @@ function generateTopMenu() {
                 `<span id=${id.split("|")[0]} class=${id.split("|")[1]}></span>`
             ).join("")}
         </h2>
+        <form>
+            <input type="button" value="My list">
+            <input type="button" value="Settings">
+            <input type="button" value="Log out">
+        </form>
         `
     );
     return template;
@@ -165,6 +173,7 @@ function generateMainContentInnerDivs(outerClassName) {
             template = generateMyListDiv();
             break;
         case "account_settings":
+            template = generateAccountSettingsDiv();
             break;
     }
     return template;
@@ -243,13 +252,39 @@ function getCreateNewListPage(){
     );
     return template;
 }
+function generateAccountSettingsDiv() {
+    const template = (
+        `
+        <h2>Account settings</h2>
+            <form id='settings_form'>
+                <label>First name</label>
+                <input type="text">
+                <label>Last name</label>
+                <input type="text">
+                <label>Email</label>
+                <input type="text">
+                <label>Password</label>
+                <input type="text">
+                <label>Password</label>
+                <input type="text">
+                <input type="button" value="Modify">
+            </form>
+        `
+    );
+    return template;
+}
 function generateFooter() {
-    return null;
+    const template = (
+        `
+        <h2>Created by: Adam Letenyei - <a href="">Project Pannonia</a></h2>    
+        `
+    );
+    return template;
 }
 /*
     Existing lists and create new buttons handlers
 */
-/*
+
 const myListDivButtonsContainer = document.getElementById('my_list_div_menu');
 myListDivButtonsContainer.querySelectorAll('input').forEach(item => {
     item.addEventListener('click', event => {
@@ -275,15 +310,15 @@ myListDivButtonsContainer.querySelectorAll('input').forEach(item => {
         }
     }
 });
-*/
+
 /* Date picker */
-/*
+
 $( function() {
     $( "#datepicker" ).datepicker({
         minDate: 'today'
     });
 });
-*/
+
 /* Import js file */
 function include(file) {
     var script = document.createElement('script');
@@ -293,10 +328,10 @@ function include(file) {
     document.getElementsByTagName('body').item(0).appendChild(script);
 }
 
-//include('js/loginHandler.js');
-//include('js/loginAndSignupHandler.js');
-//include('js/userRegistration.js');
-//include('js/userLoginHandler.js');
-//include('js/existingListsHandler.js');
-//include('js/userSettings.js');
-//include('js/createToDoList.js');
+include('js/loginHandler.js');
+include('js/loginAndSignupHandler.js');
+include('js/userRegistration.js');
+include('js/userLoginHandler.js');
+include('js/existingListsHandler.js');
+include('js/userSettings.js');
+include('js/createToDoList.js');
