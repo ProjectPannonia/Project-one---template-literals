@@ -203,6 +203,7 @@
     align-items: center;
     margin-bottom: 5px;
 }
+
 #new_list_Table {
     margin-top: 10px;
     align-self: center;
@@ -241,6 +242,14 @@
     height: 3.5vh;
     color: greenyellow;
     border: none;
+}
+#my_list_div form input:nth-child(3):hover {
+    background-color: wheat;
+    color:red;
+}
+#my_list_div form input:focus {
+    background-color: wheat;
+    color: red;
 }
 .edit_btn {
     height: 23px;
@@ -417,6 +426,10 @@
     margin-right: 5px;
 }
 #my_list_div_menu form input:hover {
+    background-color: wheat;
+    color: red;
+}
+#save_created_list:hover {
     background-color: wheat;
     color: red;
 }
