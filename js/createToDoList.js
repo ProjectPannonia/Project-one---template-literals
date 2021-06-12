@@ -21,7 +21,6 @@ saveListName.addEventListener('click', () => {
     if(listName === '') {
         alert('List name cannot be empty');
     } else {
-        //document.getElementById('create_new_list').querySelector('p').innerText = listName;
         createNewList.querySelector('p').innerText = listName;
         listnameInputField.innerText = '';
         

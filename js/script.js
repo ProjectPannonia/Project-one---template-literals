@@ -1,23 +1,12 @@
 (() => {
+    const scripts = ["js/loggedInTopmenuHandler.js", "js/loginHandler.js", "js/loginAndSignupHandler.js", "js/userRegistration.js", "js/userLoginHandler.js", "js/existingListsHandler.js", "js/userSettings.js", "js/createToDoList.js"];
+    scripts.forEach((path) => {
+        include(path);
+    });
     htmlGenerator();
 })();
 
 function htmlGenerator() {
-    const head = document.querySelector('head');
-    const headTemplate = (
-        `
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
-        <link rel="stylesheet" href="style/style.css">
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <title>To-do manager</title>
-        `
-    );
-
     const body = document.querySelector('body');
     const mainDivNames = ["sign_log_in|", "sign_up|hide", "log_in|hide", "logged_in|hide"];
 
@@ -34,7 +23,7 @@ function htmlGenerator() {
         </div>
         `
     );
-    head.innerHTML = headTemplate;
+    
     body.innerHTML = wrapperDiv;
 }
 function generateMainDivInner(id) {
@@ -299,7 +288,13 @@ function generateFooter() {
     return template;
 }
 
+/* Date picker */
 
+$( function() {
+    $( "#datepicker" ).datepicker({
+        minDate: 'today'
+    });
+});
 
 
 /* Import js file */
@@ -310,8 +305,8 @@ function include(file) {
     script.defer = true;
     document.getElementsByTagName('body').item(0).appendChild(script);
 }
-
-include('js/templateGenerator.js');
+/*
+include('js/loggedInTopmenuHandler.js');
 include('js/loginHandler.js');
 include('js/loginAndSignupHandler.js');
 include('js/userRegistration.js');
@@ -319,3 +314,4 @@ include('js/userLoginHandler.js');
 include('js/existingListsHandler.js');
 include('js/userSettings.js');
 include('js/createToDoList.js');
+*/
